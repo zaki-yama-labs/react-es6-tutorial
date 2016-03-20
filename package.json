@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint",
-    "webpack": "webpack",
-    "lite": "lite-server --verbose --open dist",
+    "webpack": "webpack -w",
     "start": "concurrent \"npm run webpack\" \"npm run lite\""
   },
   "keywords": [],
@@ -20,7 +19,6 @@
     "babel-preset-react": "^6.5.0",
     "concurrently": "^2.0.0",
     "eslint": "^2.4.0",
-    "lite-server": "^2.1.0",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "webpack": "^1.12.14"
