@@ -11,10 +11,14 @@
 import json
 import os
 import time
-from flask import Flask, Response, request
+from flask import Flask, Response, request, send_from_directory
 
 app = Flask(__name__, static_url_path='', static_folder='public')
 app.add_url_rule('/', 'root', lambda: app.send_static_file('index.html'))
+
+@app.route('/dist/<path:filename>')
+def base_static(filename):
+    return send_from_directory(app.root_path + '/dist/', filename)
 
 @app.route('/api/comments', methods=['GET', 'POST'])
 def comments_handler():
@@ -33,4 +37,4 @@ def comments_handler():
     return Response(json.dumps(comments), mimetype='application/json', headers={'Cache-Control': 'no-cache', 'Access-Control-Allow-Origin': '*'})
 
 if __name__ == '__main__':
-    app.run(port=int(os.environ.get("PORT",3000)))
+    app.run(debug=True, port=int(os.environ.get("PORT",3000)))
