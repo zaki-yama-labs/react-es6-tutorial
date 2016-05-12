@@ -3,6 +3,17 @@ React Tutorial
 
 https://facebook.github.io/react/docs/tutorial-ja-JP.html
 
+### Usage
+
+```
+$ pip install -r requirements.txt
+$ npm install
+$ npm run webpack
+$ python server.py
+```
+
+and open http://localhost:3000
+
 ### Reference
 
 - [ReactのチュートリアルをES6で書いてwebpackとESLintも使ってみる - Qiita](http://qiita.com/morizotter/items/9e2a7def6773a2a8e174)
